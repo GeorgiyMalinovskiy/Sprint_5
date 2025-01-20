@@ -21,7 +21,7 @@ class TestProfile:
         submit_button.click()
 
         # Ожидание загрузки страницы
-        WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(MainPageLocators.CONSTRUCTOR_BUTTON))
+        assert WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(MainPageLocators.CONSTRUCTOR_BUTTON))
 
     # Проверка перехода в личный кабинет
     def test_go_to_profile(self, driver):
@@ -33,7 +33,7 @@ class TestProfile:
         profile_button.click()
 
         # Проверка, что перешли в личный кабинет (видим кнопку выхода)
-        WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(ProfilePageLocators.LOGOUT_BUTTON))
+        assert WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(ProfilePageLocators.LOGOUT_BUTTON))
 
     # Проверка перехода из личного кабинета в конструктор
     def test_go_to_constructor_from_profile(self, driver):
@@ -47,7 +47,7 @@ class TestProfile:
         constructor_button.click()
 
         # Проверка, что видим вкладку "Булки"
-        WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(MainPageLocators.BUNS_TAB))
+        assert WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(MainPageLocators.BUNS_TAB))
 
     # Проверка перехода из личного кабинета в конструктор по клику на лого
     def test_go_to_constructor_by_logo(self, driver):
@@ -61,7 +61,7 @@ class TestProfile:
         logo.click()
 
         # Проверка, что перешли в конструктор
-        WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(MainPageLocators.BUNS_TAB))
+        assert WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(MainPageLocators.BUNS_TAB))
 
     # Проверка выхода из аккаунта
     def test_logout(self, driver):
@@ -75,4 +75,4 @@ class TestProfile:
         logout_button.click()
 
         # Проверка, что вышли
-        WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(LoginPageLocators.LOGIN_BUTTON))
+        assert WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(LoginPageLocators.LOGIN_BUTTON))

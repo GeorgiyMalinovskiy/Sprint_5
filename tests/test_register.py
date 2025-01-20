@@ -34,4 +34,4 @@ class TestRegistration:
         register_button.click()
 
         # Проверка, что перешли на страницу входа
-        WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(LoginPageLocators.LOGIN_BUTTON))
+        assert WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(LoginPageLocators.LOGIN_BUTTON))

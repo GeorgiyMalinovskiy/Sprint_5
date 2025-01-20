@@ -23,7 +23,7 @@ class TestLogin:
         submit_button.click()
 
         # Проверка успешного входа
-        WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(MainPageLocators.CONSTRUCTOR_BUTTON))
+        assert WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(MainPageLocators.CONSTRUCTOR_BUTTON))
 
     # Проверка входа через кнопку 'Личный кабинет'"
     def test_login_from_personal_account(self, driver):
@@ -43,7 +43,7 @@ class TestLogin:
         submit_button.click()
         
         # Проверка успешного входа
-        WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(MainPageLocators.CONSTRUCTOR_BUTTON))
+        assert WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(MainPageLocators.CONSTRUCTOR_BUTTON))
 
     # Проверка входа через форму регистрации
     def test_login_from_registration_page(self, driver):
@@ -72,4 +72,4 @@ class TestLogin:
         submit_button.click()
 
         # Проверка успешного входа
-        WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(MainPageLocators.CONSTRUCTOR_BUTTON)) 
+        assert WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(MainPageLocators.CONSTRUCTOR_BUTTON)) 
